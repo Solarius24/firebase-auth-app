@@ -19,20 +19,13 @@ export default function App() {
         <BrowserRouter>
           <AuthProvider>
             <Routes>
-              <Route
-                path="/"
-                element={
-                  <PrivateRoute>
-                    <Dashboard />
-                  </PrivateRoute>
-                }
-              ></Route>
-              <Route path="/update-profile" element={<PrivateRoute>
-                <UpdateProfile/>
-              </PrivateRoute>}></Route>
+              <Route element={<PrivateRoute />}>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/update=profile" element={<UpdateProfile />} />
+              </Route>
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/forgot-password" element={<ForgotPassword/>} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
             </Routes>
           </AuthProvider>
         </BrowserRouter>
